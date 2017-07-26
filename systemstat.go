@@ -179,7 +179,7 @@ func main() {
 
 func checkError(err error, message string) {
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "There was an error retreiving %s: ", err, message)
+		fmt.Fprintln(os.Stderr, "There was an error retreiving ", message, ":", err)
 		os.Exit(1)
 	}
 }
@@ -198,7 +198,7 @@ func getCPUStat() string {
 	for _, cpu := range cpus {
 		cpuStats = append(cpuStats, fmt.Sprintf("ModelName: %v\nCores: %v\n", cpu.ModelName, cpu.Cores))
 	}
-	cpuStat := strings.Join(cpuStats, ",")
+	cpuStat := strings.Join(cpuStats, "\n")
 
 	return cpuStat
 }
