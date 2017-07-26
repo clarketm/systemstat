@@ -179,7 +179,7 @@ func main() {
 
 func checkError(err error, message string) {
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "There was an error retreiving ", message, ":", err)
+		fmt.Fprintln(os.Stderr, "There was an error retreiving", message, ":", err)
 		os.Exit(1)
 	}
 }
