@@ -8,11 +8,11 @@ SYNOPSIS:
 OPTIONS:
     -h, --help          # print usage.
     -a, --all           # same as -c, -d, -m, -n, -p.
-    -c, --cpu           # print CPU info.
-    -d, --disk          # print Disk info.
-    -m, --mem           # print Memory info.
-    -n, --net           # print Network info.
-    -p, --proc          # print Process info.
+    -c, --cpu           # print cpu info.
+    -d, --disk          # print disk info.
+    -m, --mem           # print memory info.
+    -n, --net           # print network info.
+    -p, --proc          # print process info.
     -v, --version       # print version number.
 
 EXAMPLES:

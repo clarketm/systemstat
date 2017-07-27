@@ -13,11 +13,11 @@ SYNOPSIS:
 OPTIONS:
 	-h, --help		# print usage.
 	-a, --all		# same as -c, -d, -m, -n, -p.
-	-c, --cpu		# print CPU info.
-	-d, --disk		# print Disk info.
-	-m, --mem		# print Memory info.
-	-n, --net		# print Network info.
-	-p, --proc		# print Process info.
+	-c, --cpu		# print cpu info.
+	-d, --disk		# print disk info.
+	-m, --mem		# print memory info.
+	-n, --net		# print network info.
+	-p, --proc		# print process info.
 	-v, --version		# print version number.
 
 EXAMPLES:
@@ -43,7 +43,7 @@ import (
 )
 
 // VERSION - current version number
-const VERSION = "v1.0.0"
+const VERSION = "v1.0.1"
 
 // allFlag bool
 type allFlag bool
@@ -98,41 +98,33 @@ var bold = color.New(color.Bold).SprintFunc()
 
 // init () - initialize command-line flags
 func init() {
-	const (
-		usageAll        = "Same as --ethernet, --public."
-		usageVersion    = "Print version"
-		defaultEthernet = false
-		usageEthernet   = "Print ethernet IP address."
-		defaultPublic   = false
-		usagePublic     = "Print public IP address."
-	)
 	// -a, --all
 	flag.Var(&all, "a", "")
-	flag.Var(&all, "all", usageAll)
+	flag.Var(&all, "all", "same as -c, -d, -m, -n, -p")
 
 	// -c, --cpu
 	flag.BoolVar(&cpuStat, "c", false, "")
-	flag.BoolVar(&cpuStat, "cpu", false, "CPU stats")
+	flag.BoolVar(&cpuStat, "cpu", false, "print cpu stats")
 
 	// -d, --disk
 	flag.BoolVar(&diskStat, "d", false, "")
-	flag.BoolVar(&diskStat, "disk", false, "Disk stats")
+	flag.BoolVar(&diskStat, "disk", false, "print disk stats")
 
 	// -m, --mem
 	flag.BoolVar(&memStat, "m", false, "")
-	flag.BoolVar(&memStat, "mem", false, "Memory stats")
+	flag.BoolVar(&memStat, "mem", false, "print memory stats")
 
 	// -n, --net
 	flag.BoolVar(&netStat, "n", false, "")
-	flag.BoolVar(&netStat, "net", false, "Network stats")
+	flag.BoolVar(&netStat, "net", false, "print network stats")
 
 	// -p, --proc
 	flag.BoolVar(&procStat, "p", false, "")
-	flag.BoolVar(&procStat, "proc", false, "Process stats")
+	flag.BoolVar(&procStat, "proc", false, "print process stats")
 
 	// -v, --version
 	flag.Var(&version, "v", "")
-	flag.Var(&version, "version", usageVersion)
+	flag.Var(&version, "version", "print version number")
 
 	// Usage
 	flag.Usage = func() {
