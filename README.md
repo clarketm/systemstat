@@ -1,5 +1,7 @@
 # [systemstat](https://godoc.org/github.com/clarketm/systemstat)
 
+Command line utility for displaying process and system information.
+
 ```shell
 NAME:
     systemstat – display system information.
