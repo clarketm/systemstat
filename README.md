@@ -22,3 +22,6 @@ OPTIONS:
 EXAMPLES:
     systemstat -a       # list all system info.
 ```
+
+### Credits
+This tools wouldn't be possible without the exceptional process and system monitoring library [gopsutils](https://github.com/shirou/gopsutil) by [shirou](https://github.com/shirou).
